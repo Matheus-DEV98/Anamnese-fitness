@@ -90,8 +90,13 @@
             color: white;
             box-sizing: border-box;
             transition: 0.3s;
-            /* Suaviza a mudança de cor ao clicar */
+            letter-spacing: 0;
+            line-height: normal;
+            font-size: 16px;
+            /* Tamanho bom para leitura no celular */
         }
+
+
 
         /* 4. EFEITO DE FOCO (ENCANTAMENTO AO CLICAR) */
         input:focus,
@@ -155,13 +160,27 @@
             </div>
 
             <div class="campo-grupo">
-                <label>Seu objetivo principal</label>
-                <select name="objetivo">
-                    <option value="emagrecimento">Emagrecimento</option>
-                    <option value="hipertrofia">Ganho de massa (Hipertrofia)</option>
-                    <option value="saude">Saúde e Bem-estar</option>
-                    <option value="completo">Ganhar massa muscular, perder gordura, ter saúde e bem-estar</option>
-                </select>
+                <label>Seu objetivo principal (pode marcar mais de um):</label>
+                <div
+                    style="display: flex; flex-direction: column; gap: 10px; background: #2a2a2a; padding: 15px; border-radius: 10px; border: 1px solid #444;">
+                    <label style="color: white; font-weight: normal;">
+                        <input type="checkbox" name="objetivo[]" value="emagrecimento"
+                            style="width: auto; margin-right: 10px;"> Emagrecimento
+                    </label>
+                    <label style="color: white; font-weight: normal;">
+                        <input type="checkbox" name="objetivo[]" value="hipertrofia"
+                            style="width: auto; margin-right: 10px;"> Ganho de massa (Hipertrofia)
+                    </label>
+                    <label style="color: white; font-weight: normal;">
+                        <input type="checkbox" name="objetivo[]" value="saude" style="width: auto; margin-right: 10px;">
+                        Saúde e Bem-estar
+                    </label>
+                    <label style="color: white; font-weight: normal;">
+                        <input type="checkbox" name="objetivo[]" value="completo"
+                            style="width: auto; margin-right: 10px;"> Ganhar massa e definição com saúde (Todas as
+                        opções)
+                    </label>
+                </div>
             </div>
 
             <div class="campo-grupo">
