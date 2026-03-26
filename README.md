@@ -20,5 +20,14 @@ A cliente solicitou um formulário que fosse além do padrão técnico. Como fã
 ## 🔗 Demonstração
 Você pode visualizar o projeto online aqui: [https://matheus-dev98.github.io/Anamnese-fitness/]
 
+# Anamnese Fitness - Lufa-Lufa 🦡
+
+Projeto de acompanhamento de treino personalizado.
+
+## Links Rápidos:
+- [Página de Cadastro (Formulário)] https://matheus-dev98.github.io/Anamnese-fitness/
+
+- [Guia de Treino Detalhado]  https://matheus-dev98.github.io/Anamnese-fitness/treino.html
+
 ---
-*Projeto desenvolvido por [Matheus da Silva Barbosa] durante a transição de carreira para Desenvolvimento Fullstack.*
+*Projeto desenvolvido por Matheus da Silva Barbosa durante a transição de carreira para Desenvolvimento Fullstack.*
