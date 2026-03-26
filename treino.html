@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Treino Lufa-Lufa 🦡</title>
+    <style>
+        :root { --amarelo: #ffdb00; --preto: #121212; --cinza: #1e1e1e; --vermelho: #ff4d4d; --azul: #4da6ff; --verde: #2ecc71; }
+        body { font-family: 'Segoe UI', Tahoma, sans-serif; background: var(--preto); color: white; text-align: center; padding: 15px; margin: 0; padding-top: 160px; }
+        .container { max-width: 550px; margin: auto; }
+        
+        /* PAINEL FIXO */
+        .header-fixo { position: fixed; top: 0; left: 0; width: 100%; background: #000; z-index: 1000; border-bottom: 2px solid var(--amarelo); padding-bottom: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.5); }
+        h1 { color: var(--amarelo); margin: 10px 0 5px; font-size: 18px; text-transform: uppercase; }
+        #timer { font-size: 32px; color: var(--amarelo); font-weight: bold; margin-bottom: 5px; display: none; }
+        .controles-timer { display: flex; justify-content: center; gap: 8px; padding: 0 10px; }
+        .btn-timer { flex: 1; padding: 12px; border-radius: 8px; border: none; font-weight: bold; cursor: pointer; font-size: 11px; transition: 0.2s; }
+        .btn-30s { background: #333; color: white; border: 1px solid #555; }
+        .btn-60s { background: var(--amarelo); color: black; }
+        
+        /* NAVEGAÇÃO */
+        .tab-container { display: flex; gap: 5px; margin: 10px; }
+        .tab-btn { flex: 1; padding: 10px; border: 1px solid var(--amarelo); background: none; color: var(--amarelo); font-weight: bold; border-radius: 8px; cursor: pointer; font-size: 10px; }
+        .tab-btn.active { background: var(--amarelo); color: black; }
+        
+        /* CARDS DETALHADOS */
+        .secao-titulo { background: #333; padding: 10px; border-radius: 8px; margin: 20px 0 10px; color: var(--amarelo); font-weight: bold; font-size: 14px; border: 1px solid #444; }
+        .card { background: var(--cinza); border-left: 5px solid var(--amarelo); border-radius: 12px; padding: 18px; margin-bottom: 20px; text-align: left; line-height: 1.5; }
+        .card h3 { margin: 0 0 10px 0; color: var(--amarelo); font-size: 18px; border-bottom: 1px solid #333; padding-bottom: 5px; }
+        
+        .passo-a-passo { font-size: 13px; color: #eee; margin-bottom: 12px; }
+        .passo-a-passo b { color: var(--amarelo); }
+        
+        .beneficio { background: rgba(46, 204, 113, 0.1); border: 1px solid var(--verde); padding: 10px; border-radius: 8px; font-size: 12px; color: #cfc; margin-top: 10px; }
+        .alerta-descanso { background: rgba(255, 77, 77, 0.1); border: 1px solid var(--vermelho); padding: 10px; border-radius: 8px; font-size: 12px; color: var(--vermelho); margin-top: 15px; text-align: center; font-weight: bold; }
+
+        .card-cardio { border-left: 5px solid var(--vermelho); background: #231212; }
+        .card-cardio h3 { color: var(--vermelho); }
+        .card-mob { border-left: 5px solid var(--azul); background: #121920; }
+        .card-mob h3 { color: var(--azul); }
+    </style>
+</head>
+<body>
+
+<div class="header-fixo">
+    <h1>Guia de Treino Lufa-Lufa 🦡</h1>
+    <div id="timer">00s</div>
+    <div class="controles-timer">
+        <button class="btn-timer btn-30s" onclick="startTimer(30)">DESCANSO ENTRE SÉRIES (30s)</button>
+        <button class="btn-timer btn-60s" onclick="startTimer(60)">DESCANSO ENTRE BLOCOS (60s)</button>
+    </div>
+    <div class="tab-container">
+        <button class="tab-btn active" id="btnMob" onclick="abrirTreino('Mob')">MOBILIDADE</button>
+        <button class="tab-btn" id="btnA" onclick="abrirTreino('A')">TREINO A</button>
+        <button class="tab-btn" id="btnB" onclick="abrirTreino('B')">TREINO B</button>
+    </div>
+</div>
+
+<div class="container">
+
+    <div id="treinoMob" class="secao-treino">
+        <div class="secao-titulo">✨ PASSO 1: MOBILIDADE (Preparar o Corpo)</div>
+        <div class="card card-mob">
+            <h3>Gato e Camelo</h3>
+            <div class="passo-a-passo">
+                <b>Posição:</b> 4 apoios (mãos e joelhos no chão).<br>
+                <b>Como fazer:</b> Arqueie as costas para cima como um gato bravo, olhando para o umbigo. Depois, empine o bumbum e olhe para frente, curvando as costas para baixo.<br>
+                <b>Sinta:</b> O movimento suave de cada parte da sua coluna.
+            </div>
+            <div class="beneficio">✅ <b>Benefício:</b> Alivia a rigidez nas costas e melhora a postura para o dia todo.</div>
+        </div>
+        <div class="card card-mob">
+            <h3>Avanço com Rotação</h3>
+            <div class="passo-a-passo">
+                <b>Posição:</b> Um passo largo à frente, joelho de trás quase no chão.<br>
+                <b>Como fazer:</b> Com as mãos à frente, gire o tronco para o lado da perna que está na frente. Troque a perna e repita.<br>
+                <b>Sinta:</b> O quadril "abrindo" e a lateral do corpo alongando.
+            </div>
+            <div class="beneficio">✅ <b>Benefício:</b> Prepara o quadril para agachar sem dor e com mais amplitude.</div>
+        </div>
+    </div>
+
+    <div id="treinoA" class="secao-treino" style="display:none;">
+        <div class="secao-titulo">🦵 BLOCO 1: PERNAS E RITMO</div>
+        
+        <div class="card">
+            <h3>1. Agachamento Livre</h3>
+            <div class="passo-a-passo">
+                <b>Posição:</b> Pés na largura dos ombros, pontas levemente para fora.<br>
+                <b>Adaptação:</b> Use a mochila com livros (ou outros objetos) nas costas bem ajustada.<br>
+                <b>Como fazer:</b> Desça o bumbum como se fosse sentar em uma cadeira invisível. Mantenha o calcanhar firme no chão e o peito aberto.<br>
+                <b>Músculo alvo:</b> Coxas e Glúteo.
+            </div>
+            <div class="beneficio">✅ <b>Benefício:</b> Fortalece as pernas para subir escadas com facilidade e protege os joelhos.</div>
+            <div class="alerta-descanso">🚨 Fez 1 série? Aperte o botão de 30s. Terminou as 2? Suba e aperte o de 60s!</div>
+        </div>
+        <div class="card">
+            <h3>2. Subida no Degrau (Step-up)</h3>
+            <div class="passo-a-passo">
+                <b>Posição:</b> Em frente a uma cadeira firme, sofá ou degrau de escada.<br>
+                <b>Como fazer:</b> Apoie um pé inteiro na superfície elevada. Uma perna de cada vez, (unilateral). Suba usando apenas a força dessa perna, sem dar "impulso" com o pé que ficou no chão. Desça segurando o corpo devagar.<br>
+                <b>Sinta:</b> A coxa e o glúteo da perna que está em cima trabalhando intensamente.
+            </div>
+            <div class="beneficio">✅ <b>Benefício:</b> Desenvolve um equilíbrio incrível e força real para o dia a dia (subir ladeiras ou escadas sem fôlego).</div>
+            <div class="alerta-descanso">🚨 Fez 1 série (as duas pernas)? Botão de 30s. Terminou as 2? Botão de 60s!</div>
+        </div>
+
+        <div class="card card-cardio">
+            <h3>3.⚡ FITDANCE: ENERGIA</h3>
+            <div class="passo-a-passo">
+                <b>O que fazer:</b> Escolha uma música agitada e dance apenas o refrão com movimentos grandes e rápidos.<br>
+                <b>Foco:</b> Se divertir e aumentar os batimentos do coração.
+            </div>
+            <div class="alerta-descanso">🚨 Terminou a música? Aperte o botão de 60s antes de seguir!</div>
+        </div>
+
+        <div class="secao-titulo">💪 BLOCO 2: FORÇA SUPERIOR E CORE</div>
+
+        <div class="card">
+            <h3>4. Super-Série: Flexão + Tríceps</h3>
+            <div class="passo-a-passo">
+                <b>Flexão:</b> Mãos no chão, desça o peito. Se precisar, use os joelhos.<br>
+                <b>Tríceps:</b> De costas para um sofá/cadeira firme, desça o corpo dobrando os cotovelos.<br>
+                <b>Músculo alvo:</b> Peito, Ombro e Tríceps (músculo de trás no braço).
+            </div>
+            <div class="beneficio">✅ <b>Benefício:</b> Melhora a força para empurrar objetos, se levantar, e tonifica os braços (não vai deixar musculosa, apenas ganhar força).</div>
+            <div class="alerta-descanso">🚨 Só descanse 30s após fazer os dois seguidos! No final, 60s.</div>
+        </div>
+
+        <div class="card">
+            <h3>5. Prancha + Encolhimento</h3>
+            <div class="passo-a-passo">
+                <b>Prancha:</b> Apoie os antebraços e pontas dos pés. Corpo reto.<br>
+                <b>Encolhimento:</b> Segure garrafas de amaciante ou algo de peso igual nas duas mãos. Suba os ombros em direção às orelhas e desça devagar.<br>
+                <b>Músculo alvo:</b> Abdômen (prancha) e Trapézio (encolhimento).
+            </div>
+            <div class="beneficio">✅ <b>Benefício:</b> O encolhimento fortalece a base do pescoço, evitando dores ao carregar mochilas pesadas. E a prancha melhora o core (é o conjunto de músculos localizados na região central do corpo, que estabilizam e protegem a coluna vertebral. Exercitar o core é fundamental para garantir equilíbrio, postura e força para movimentos diários e atividades físicas). </div>
+            <div class="alerta-descanso">🚨 Terminou o Bloco A? Aperte o botão de 60s!</div>
+        </div>
+    </div>
+
+    <div id="treinoB" class="secao-treino" style="display:none;">
+        <div class="secao-titulo">🍑 BLOCO 1: GLÚTEO E POSTERIOR</div>
+
+        <div class="card">
+            <h3>1. Elevação Pélvica</h3>
+            <div class="passo-a-passo">
+                <b>Posição:</b> Deitada de costas, joelhos dobrados. Mochila sobre o quadril.<br>
+                <b>Como fazer:</b> Empurre o quadril para o teto, esmagando o glúteo no topo por 2 segundos.<br>
+                <b>Sinta:</b> O bumbum trabalhar forte.
+            </div>
+            <div class="beneficio">✅ <b>Benefício:</b> É o melhor exercício para modelar o glúteo e estabilizar a lombar.</div>
+            <div class="alerta-descanso">🚨 Fez a série? Botão de 30s. Terminou o exercício? Botão de 60s.</div>
+        </div>
+
+        <div class="card card-cardio">
+            <h3>2.💃 DANÇA LATERAL</h3>
+            <div class="passo-a-passo">
+                <b>Como fazer:</b> Passos rápidos para um lado e para o outro, coordenando braços e pernas. Ritmo constante por 1 minuto.
+            </div>
+            <div class="alerta-descanso">🚨 Terminou? Aperte o botão de 60s!</div>
+        </div>
+
+        <div class="card">
+            <h3>3. RDL (Stiff com Mochila)</h3>
+            <div class="passo-a-passo">
+                <b>Posição:</b> Segure a mochila pelas alças à frente do corpo.<br>
+                <b>Como fazer:</b> Empurre o bumbum para trás com as pernas quase retas. Desça a mochila colada na perna até sentir "esticar" atrás da coxa.<br>
+                <b>Músculo alvo:</b> Posterior de coxa e glúteo.
+            </div>
+            <div class="beneficio">✅ <b>Benefício:</b> Corrige a postura e fortalece a parte traseira do corpo contra cansaço (posterior de coxa, glúteos e lombar).</div>
+            <div class="alerta-descanso">🚨 Fez 1 série? 30s. Terminou? 60s.</div>
+        </div>
+
+        <div class="secao-titulo">🎒 BLOCO 2: POSTURA E BRAÇOS</div>
+
+        <div class="card">
+            <h3>4. Barra Isométrica + Remada</h3>
+            <div class="passo-a-passo">
+                <b>Barra:</b> Apenas pendure-se na barra fixa para fortalecer as mãos, relaxar e descomprimir a coluna.<br>
+                <b>Remada:</b> Incline o tronco e puxe a mochila/cabo de vassoura/ou outro peso em direção ao umbigo.<br>
+                <b>Sinta:</b> As "asas" (dorsais) das costas fechando.
+            </div>
+            <div class="beneficio">✅ <b>Benefício:</b> Fortalece as costas para você não ficar curvada ao usar o celular ou PC, em casa ou no trabalho.</div>
+            <div class="alerta-descanso">🚨 30s entre as séries. 60s ao final.</div>
+        </div>
+
+        <div class="card">
+            <h3>5. Rosca Direta + Abdominal Infra</h3>
+            <div class="passo-a-passo">
+                <b>Rosca:</b> Garrafas iguais nas mãos (se unilateral), ou um peso levemente maior com os dois braços. Dobre o cotovelo sem mexer os ombros.<br>
+                <b>Infra:</b> Deitada, suba as pernas esticadas e desça sem encostar no chão. Dica: apoie os braços no chão com as palmas das mãos para baixo<br>
+                <b>Músculo alvo:</b> Bíceps (rosca direta) e parte inferior do abdômen (abdominal infra).
+            </div>
+            <div class="beneficio">✅ <b>Benefício:</b> Braços tonificados e abdômen forte para proteger a coluna.</div>
+            <div class="alerta-descanso">🚨 Treino Finalizado! Aperte 60s e relaxe.</div>
+        </div>
+    </div>
+
+</div>
+
+<script>
+    function abrirTreino(tipo) {
+        document.querySelectorAll('.secao-treino').forEach(div => div.style.display = 'none');
+        document.getElementById('treino' + tipo).style.display = 'block';
+        document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+        document.getElementById('btn' + tipo).classList.add('active');
+        window.scrollTo(0,0);
+    }
+
+    let interval;
+    function startTimer(segundos) {
+        clearInterval(interval);
+        let tempo = segundos;
+        const display = document.getElementById('timer');
+        display.style.display = 'block';
+        
+        interval = setInterval(() => {
+            display.innerText = (tempo < 10 ? "0" : "") + tempo + "s";
+            tempo--;
+            if (tempo < 0) {
+                clearInterval(interval);
+                display.innerText = "PRONTO! 🔥";
+                setTimeout(() => { display.style.display = 'none'; }, 3000);
+            }
+        }, 1000);
+    }
+</script>
+</body>
+</html>
