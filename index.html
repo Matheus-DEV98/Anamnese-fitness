@@ -79,21 +79,26 @@
             font-size: 14px;
         }
 
+        /* 3. ENTRADAS DE DADOS (CAIXAS) - PADRONIZADAS */
         input,
         select,
         textarea {
             width: 100%;
             padding: 12px;
-            background-color: #2a2a2a;
+            background-color: #2a2a2a !important; /* Força o fundo igual em todas */
             border: 1px solid #444;
             border-radius: 10px;
-            color: white;
+            color: white !important; /* Força a letra branca */
             box-sizing: border-box;
             transition: 0.3s;
             letter-spacing: 0;
             line-height: normal;
             font-size: 16px;
-            /* Tamanho bom para leitura no celular */
+            font-family: inherit; /* Faz a segunda caixa usar a mesma letra da primeira */
+            appearance: none; /* Remove o estilo "arredondado" padrão do iPhone */
+            -webkit-appearance: none;
+            display: block; /* Garante que fiquem uma embaixo da outra certinho */
+            margin-bottom: 15px; /* Define o mesmo espaço entre todas as caixas */
         }
 
 
