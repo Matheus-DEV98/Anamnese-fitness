@@ -1,28 +1,32 @@
-# ⚡ Formulário de Anamnese Fitness - Tema Lufa-Lufa
+⚡ Anamnese Fitness & Guia de Treino - Tema Lufa-Lufa
 
-Este é um projeto real desenvolvido para uma consultoria de Personal Trainer. O objetivo foi criar uma interface de coleta de dados de saúde e objetivos físicos de forma personalizada e responsiva.
+Este é um projeto real desenvolvido para uma consultoria de Personal Trainer. O objetivo foi criar uma interface de coleta de dados de saúde e um guia de exercícios dinâmico, totalmente personalizado e responsivo.
+🎯 Case do Projeto
 
-## 🎯 Case do Projeto
-A cliente solicitou um formulário que fosse além do padrão técnico. Como fã da saga Harry Potter, especificamente da casa **Lufa-Lufa**, a interface foi personalizada com as cores (amarelo e preto) e elementos visuais da casa para aumentar o engajamento e a satisfação no preenchimento.
+A cliente solicitou uma experiência que fosse além do padrão técnico. Como fã da saga Harry Potter, especificamente da casa Lufa-Lufa, a interface foi personalizada com as cores (amarelo e preto) e elementos visuais da casa para aumentar o engajamento e a motivação durante o treino.
+🚀 Tecnologias Utilizadas
 
-## 🚀 Tecnologias Utilizadas
-* **HTML5:** Estruturação semântica de formulários.
-* **CSS3:** Estilização avançada com variáveis, efeitos de brilho (box-shadow) e design responsivo para dispositivos móveis.
-* **Formspree:** Integração de back-end para processamento e recebimento de dados via e-mail.
-* **GitHub Pages:** Hospedagem e deploy da aplicação.
+    HTML5: Estruturação semântica para o formulário e o guia de exercícios.
 
-## 🛠️ Funcionalidades e Aprendizados
-* **UX/UI Temática:** Aplicação de identidade visual personalizada de acordo com o perfil do cliente final.
-* **Validação de Dados:** Uso de inputs específicos (números, checkboxes e textareas) para garantir a qualidade da informação coletada.
-* **Resolução de Problemas (Troubleshooting):** Ajustes de espaçamento de texto e escala para navegadores mobile específicos (iOS/Android).
-* **Escalabilidade:** O código foi estruturado com variáveis CSS, permitindo que o tema seja alterado para outras casas ou marcas em segundos.
+    CSS3: Estilização avançada com variáveis, efeitos de brilho (box-shadow) e design responsivo.
 
-## 🔗 Demonstração
-Você pode visualizar o projeto online aqui: [https://matheus-dev98.github.io/Anamnese-fitness/]
+    Anatomical Animations (GIFs): Curadoria de guias visuais técnicos com foco em execução e musculatura alvo.
 
-# Anamnese Fitness - Lufa-Lufa 🦡
+    Formspree: Integração de back-end para recebimento de dados via e-mail.
 
-Projeto de acompanhamento de treino personalizado.
+    GitHub Pages: Hospedagem e deploy da aplicação.
+
+🛠️ Funcionalidades e Aprendizados
+
+    Guia Visual Técnico: Implementação de GIFs demonstrativos com foco anatômico, garantindo que a execução dos exercícios seja feita de forma correta e segura.
+
+    UX/UI Temática: Aplicação de identidade visual personalizada de acordo com o perfil do cliente final (Lufa-Lufa).
+
+    Refinamento de Treino: Estruturação de séries (2 séries por exercício) e metas de repetições focadas em constância e evolução técnica.
+
+    Troubleshooting Mobile: Ajustes críticos de CSS (como appearance: none e box-sizing) para garantir que botões e caixas de texto funcionem perfeitamente em iOS e Android.
+
+    Escalabilidade: Código estruturado para permitir a troca de temas ou inclusão de novos exercícios de forma ágil.
 
 ## Links Rápidos:
 - [Página de Cadastro (Formulário)] https://matheus-dev98.github.io/Anamnese-fitness/
